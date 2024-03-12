@@ -6,7 +6,8 @@ GlobalKey<FormState> formkey = GlobalKey<FormState>();
 Widget Info(
     {required bool selectedvalue,
     required decoration,
-    required bool password}) {
+    required bool password,
+    required context}) {
   return Expanded(
     child: Visibility(
       visible: selectedvalue,
@@ -25,7 +26,6 @@ Widget Info(
               ),
               const Text(
                   'Include your full name and at least one way for employers to reach you.'),
-              // Info(context: context, size: size, text: 'First Name')
               Form(
                 key: formkey,
                 child: SingleChildScrollView(
@@ -35,6 +35,13 @@ Widget Info(
                       TextFormField(
                         onSaved: (val) {
                           Global.global.Name = val;
+                        },
+                        validator: (val) {
+                          if (val!.isEmpty) {
+                            return 'Must Enter Name';
+                          } else {
+                            return null;
+                          }
                         },
                         textInputAction: TextInputAction.next,
                         decoration: InputDecoration(
@@ -50,6 +57,14 @@ Widget Info(
                       TextFormField(
                         onSaved: (val) {
                           Global.global.email = val;
+                        },
+                        validator: (val) {
+                          val!.isEmpty
+                              ? "Must enter email"
+                              : RegExp(r'''^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$''')
+                                      .hasMatch(val)
+                                  ? null
+                                  : "Invalid email";
                         },
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.emailAddress,
@@ -68,6 +83,13 @@ Widget Info(
                         onSaved: (val) {
                           Global.global.contact = val;
                         },
+                        validator: (val) {
+                          val!.isEmpty
+                              ? 'Must Enter Contact Number'
+                              : val.length < 10
+                                  ? 'Must Enter 10 Digit'
+                                  : null;
+                        },
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.number,
                         maxLength: 10,
@@ -85,6 +107,9 @@ Widget Info(
                         onSaved: (val) {
                           Global.global.address = val;
                         },
+                        validator: (val) {
+                          val!.isEmpty ? 'Must Enter Address' : null;
+                        },
                         textInputAction: TextInputAction.next,
                         maxLines: 2,
                         decoration: InputDecoration(
@@ -101,6 +126,9 @@ Widget Info(
                         onSaved: (val) {
                           Global.global.password = val;
                         },
+                        validator: (val) {
+                          val!.isEmpty ? 'Must Enter Password' : null;
+                        },
                         textInputAction: TextInputAction.done,
                         obscureText: password,
                         keyboardType: TextInputType.visiblePassword,
@@ -111,23 +139,29 @@ Widget Info(
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              formkey.currentState!.save();
+                              bool validated = formkey.currentState!.validate();
+                              if (validated) {
+                                formkey.currentState!.save();
+                              }
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                MySnackBar(
+                                  color: validated ? Colors.green : Colors.red,
+                                  context: validated
+                                      ? 'Form Saved'
+                                      : 'Failed To Validate Form',
+                                ),
+                              );
                             },
-                            child: Text('Save'),
+                            child: const Text('Save'),
                           ),
                           ElevatedButton(
                             onPressed: () {
                               formkey.currentState!.reset();
                             },
-                            child: Text('Reset'),
+                            child: const Text('Reset'),
                           ),
                         ],
                       ),
-                      Text('${Global.global.Name}'),
-                      Text('${Global.global.email}'),
-                      Text('${Global.global.contact}'),
-                      Text('${Global.global.address}'),
-                      Text('${Global.global.password}'),
                     ],
                   ),
                 ),
@@ -137,5 +171,13 @@ Widget Info(
         ),
       ),
     ),
+  );
+}
+
+SnackBar MySnackBar({required color, required context}) {
+  return SnackBar(
+    content: Text(context),
+    behavior: SnackBarBehavior.floating,
+    backgroundColor: color,
   );
 }

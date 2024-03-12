@@ -8,47 +8,47 @@ class MyRoutes {
     {
       'title': 'Personal info',
       'routes': 'personal_info',
-      'icon': '',
+      'icon': 'lib/assets/images/user (2).png',
     },
     {
       'title': 'Education',
       'routes': 'education',
-      'icon': '',
+      'icon': 'lib/assets/images/level-1.png',
     },
     {
       'title': 'Experience',
       'routes': 'experience',
-      'icon': '',
+      'icon': 'lib/assets/images/experience.png',
     },
     {
       'title': 'Certified courses',
       'routes': 'certified_courses',
-      'icon': '',
+      'icon': 'lib/assets/images/id-card (1).png',
     },
     {
       'title': 'Projects',
       'routes': 'projects',
-      'icon': '',
+      'icon': 'lib/assets/images/clipboard.png',
     },
     {
       'title': 'Technical skills',
       'routes': 'technical_skills',
-      'icon': '',
+      'icon': 'lib/assets/images/idea.png',
     },
     {
       'title': 'hobbies',
       'routes': 'hobbies',
-      'icon': '',
+      'icon': 'lib/assets/images/lifestyle.png',
     },
     {
       'title': 'About',
       'routes': 'about_info',
-      'icon': '',
+      'icon': 'lib/assets/images/information.png',
     },
     {
       'title': 'Achievements',
       'routes': 'achievements',
-      'icon': '',
+      'icon': 'lib/assets/images/trophy.png',
     }
   ];
 }

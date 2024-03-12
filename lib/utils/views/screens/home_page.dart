@@ -14,19 +14,34 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawerScrimColor: Colors.white,
       appBar: AppBar(
-        title: Text('Resume App'),
+        title: const Text(
+          'Resume App',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.indigo,
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           Navigator.pushNamed(context, MyRoutes.BuildOptionPage);
         },
-        icon: Icon(Icons.add),
-        label: Text('Create'),
-        backgroundColor: Color.fromARGB(255, 100, 149, 237),
+        icon: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        label: const Text(
+          'Create',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        backgroundColor: Colors.indigo,
       ),
       body: Container(
         alignment: Alignment.center,
-        child: Text('No any Resume is created'),
+        child: const Text('No any Resume is created'),
       ),
     );
   }

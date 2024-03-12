@@ -1,5 +1,13 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:resume_builder_app/utils/views/commponets/personal.dart';
+
+import '../../../Global.dart';
 
 class PersonalInfo extends StatefulWidget {
   const PersonalInfo({super.key});
@@ -21,7 +29,23 @@ class _PersonalInfoState extends State<PersonalInfo> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Personal info'),
+          title: const Text(
+            'Personal info',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          leading: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: const Icon(
+              Icons.arrow_back_ios_rounded,
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor: Colors.indigo,
         ),
         body: Column(
           children: [
@@ -36,7 +60,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     height: size.height * 0.07,
                     width: size.width * 0.5,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 31, 90, 172),
+                      color: Colors.indigo,
                       border: _selectedvalue == false
                           ? const Border(
                               bottom: BorderSide(width: 6, color: Colors.white),
@@ -63,7 +87,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     height: size.height * 0.07,
                     width: size.width * 0.5,
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 31, 90, 172),
+                      color: Colors.indigo,
                       border: _selectedvalue == true
                           ? const Border(
                               bottom: BorderSide(width: 5, color: Colors.white),
@@ -85,6 +109,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
             ),
             Info(
                 selectedvalue: _selectedvalue,
+                context: context,
                 decoration: InputDecoration(
                   prefixIcon: Icon(Icons.password),
                   hintText: "Enter Password",
@@ -108,40 +133,53 @@ class _PersonalInfoState extends State<PersonalInfo> {
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Stack(
-                      clipBehavior: Clip.none,
-                      alignment: Alignment.bottomRight,
                       children: [
-                        Container(
-                          padding: const EdgeInsets.all(16),
-                          height: size.height * 0.3,
-                          width: size.height * 0.2,
-                          decoration: const BoxDecoration(
+                        CircleAvatar(
+                          radius: size.height * 0.1,
+                          foregroundImage: Global.global.image != null
+                              ? FileImage(Global.global.image!)
+                              : null,
+                        ),
+                        IconButton(
+                          onPressed: () async {
+                            ImagePicker picker = ImagePicker();
+
+                            XFile? file = await picker.pickImage(
+                                source: ImageSource.camera);
+
+                            if (file != null) {
+                              Global.global.image = File(file.path);
+                              setState(() {});
+                            }
+                          },
+                          icon: const Icon(
+                            Icons.add,
                             color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 2,
-                                offset: Offset(1, 1),
-                                color: Colors.grey,
-                              ),
-                            ],
-                            shape: BoxShape.circle,
+                          ),
+                          style: const ButtonStyle(
+                            backgroundColor: MaterialStatePropertyAll(
+                              Colors.indigo,
+                            ),
                           ),
                         ),
-                        Positioned(
-                          right: 3,
-                          child: FloatingActionButton(
-                            onPressed: () {},
-                            backgroundColor: Colors.indigo,
-                            child: const Icon(Icons.add),
-                          ),
-                        )
                       ],
                     ),
                     SizedBox(
-                      height: size.height * 0.5,
-                    )
+                      height: size.height * 0.06,
+                    ),
+                    const Text(
+                      'Add Your Profile Photo',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 26,
+                      ),
+                    ),
+                    SizedBox(
+                      height: size.height * 0.45,
+                    ),
                   ],
                 ),
               ),

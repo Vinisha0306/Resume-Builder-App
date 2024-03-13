@@ -30,6 +30,7 @@ class _TechnicalSkillsState extends State<TechnicalSkills> {
         ),
         backgroundColor: Colors.indigo,
       ),
+      backgroundColor: Color.fromARGB(255, 100, 149, 237),
     );
   }
 }

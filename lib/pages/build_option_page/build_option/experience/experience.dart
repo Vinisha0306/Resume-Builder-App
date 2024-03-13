@@ -30,6 +30,7 @@ class _ExperienceState extends State<Experience> {
         ),
         backgroundColor: Colors.indigo,
       ),
+      backgroundColor: Color.fromARGB(255, 100, 149, 237),
     );
   }
 }

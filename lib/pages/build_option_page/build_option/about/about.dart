@@ -30,6 +30,7 @@ class _AboutState extends State<About> {
         ),
         backgroundColor: Colors.indigo,
       ),
+      backgroundColor: Color.fromARGB(255, 100, 149, 237),
     );
   }
 }

@@ -30,6 +30,36 @@ class _PersonalDetailsState extends State<PersonalDetails> {
         ),
         backgroundColor: Colors.indigo,
       ),
+      backgroundColor: Color.fromARGB(255, 100, 149, 237),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.white,
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Date Of Birth'),
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'DD/MM/YYYY',
+                    // enabledBorder: OutlineInputBorder(
+                    //   borderRadius: BorderRadius.circular(10),
+                    // ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

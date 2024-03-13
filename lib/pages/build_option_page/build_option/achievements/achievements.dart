@@ -30,6 +30,7 @@ class _AchievementsState extends State<Achievements> {
         ),
         backgroundColor: Colors.indigo,
       ),
+      backgroundColor: Color.fromARGB(255, 100, 149, 237),
     );
   }
 }

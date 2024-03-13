@@ -11,6 +11,11 @@ class MyRoutes {
       'icon': 'lib/assets/images/user (2).png',
     },
     {
+      'title': 'Personal Details',
+      'routes': 'personal_details',
+      'icon': 'lib/assets/images/profile.png',
+    },
+    {
       'title': 'Education',
       'routes': 'education',
       'icon': 'lib/assets/images/level-1.png',

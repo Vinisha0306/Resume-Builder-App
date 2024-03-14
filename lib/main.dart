@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume_builder_app/pages/build_option_page/PDF_page/pdf_page.dart';
 import 'package:resume_builder_app/pages/build_option_page/build_option/about/about.dart';
 import 'package:resume_builder_app/pages/build_option_page/build_option/achievements/achievements.dart';
 import 'package:resume_builder_app/pages/build_option_page/build_option/certified_courses/certified_courses.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.SpleshScreen: (context) => SplashScreen(),
         MyRoutes.HomePage: (context) => HomePage(),
         MyRoutes.BuildOptionPage: (context) => Build_Option_Page(),
+        MyRoutes.PDFPage: (context) => PDFPage(),
         MyRoutes.BuildOptions[0]['routes']: (context) => PersonalInfo(),
         MyRoutes.BuildOptions[1]['routes']: (context) => PersonalDetails(),
         MyRoutes.BuildOptions[2]['routes']: (context) => Education(),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class PersonalDetails extends StatefulWidget {
   const PersonalDetails({super.key});
@@ -47,8 +48,6 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                 TextField(
                   decoration: InputDecoration(
                     hintText: 'DD/MM/YYYY',
-                    // enabledBorder: OutlineInputBorder(
-                    //   borderRadius: BorderRadius.circular(10),
                     // ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),

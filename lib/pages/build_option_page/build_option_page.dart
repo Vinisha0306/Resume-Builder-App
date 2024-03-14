@@ -64,6 +64,12 @@ class _Build_Option_PageState extends State<Build_Option_Page> {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed(MyRoutes.PDFPage);
+        },
+        child: Text('PDF'),
+      ),
     );
   }
 }

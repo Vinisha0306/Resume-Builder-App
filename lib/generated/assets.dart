@@ -2,27 +2,19 @@
 class Assets {
   Assets._();
 
-  static const String aboutAbout =
-      'lib/pages/build_option_page/build_option/about/about.dart';
-  static const String achievementsAchievements =
-      'lib/pages/build_option_page/build_option/achievements/achievements.dart';
-  static const String buildOptionPageBuildOptionPage =
-      'lib/pages/build_option_page/build_option_page.dart';
-  static const String certifiedCoursesCertifiedCourses =
-      'lib/pages/build_option_page/build_option/certified_courses/certified_courses.dart';
-  static const String componentsPersonal =
-      'lib/pages/build_option_page/build_option/personal_info_page/components/personal.dart';
-  static const String educationEducation =
-      'lib/pages/build_option_page/build_option/education/education.dart';
-  static const String experienceExperience =
-      'lib/pages/build_option_page/build_option/experience/experience.dart';
+  static const String aboutAbout = 'lib/pages/build_option_page/build_option/about/about.dart';
+  static const String achievementsAchievements = 'lib/pages/build_option_page/build_option/achievements/achievements.dart';
+  static const String buildOptionPageBuildOptionPage = 'lib/pages/build_option_page/build_option_page.dart';
+  static const String certifiedCoursesCertifiedCourses = 'lib/pages/build_option_page/build_option/certified_courses/certified_courses.dart';
+  static const String componentsPersonal = 'lib/pages/build_option_page/build_option/personal_info_page/components/personal.dart';
+  static const String educationEducation = 'lib/pages/build_option_page/build_option/education/education.dart';
+  static const String experienceExperience = 'lib/pages/build_option_page/build_option/experience/experience.dart';
   static const String generatedAssets = 'lib/generated/assets.dart';
-  static const String hobbiesHobbies =
-      'lib/pages/build_option_page/build_option/hobbies/hobbies.dart';
+  static const String hobbiesHobbies = 'lib/pages/build_option_page/build_option/hobbies/hobbies.dart';
   static const String homePageHomePage = 'lib/pages/home_page/home_page.dart';
   static const String imagesClipboard = 'lib/assets/images/clipboard.png';
   static const String imagesExperience = 'lib/assets/images/experience.png';
-  static const String imagesIdCard = 'lib/assets/images/id-card (1).png';
+  static const String imagesIdCard (1) = 'lib/assets/images/id-card (1).png';
   static const String imagesIdea = 'lib/assets/images/idea.png';
   static const String imagesInformation = 'lib/assets/images/information.png';
   static const String imagesLevel1 = 'lib/assets/images/level-1.png';
@@ -30,19 +22,16 @@ class Assets {
   static const String imagesLogo = 'lib/assets/images/logo.png';
   static const String imagesProfile = 'lib/assets/images/profile.png';
   static const String imagesTrophy = 'lib/assets/images/trophy.png';
-  static const String imagesUser = 'lib/assets/images/user (2).png';
+  static const String imagesUser (2) = 'lib/assets/images/user (2).png';
   static const String libMain = 'lib/main.dart';
-  static const String personalDetailsPersonalDetails =
-      'lib/pages/build_option_page/build_option/personal_details/personal_details.dart';
-  static const String personalInfoPagePersonalInfoPage =
-      'lib/pages/build_option_page/build_option/personal_info_page/personal_info_page.dart';
-  static const String projectsProjects =
-      'lib/pages/build_option_page/build_option/projects/projects.dart';
-  static const String splashScreensSplashScreens =
-      'lib/pages/splash_screens/splash_screens.dart';
-  static const String technicalSkillsTechnicalSkills =
-      'lib/pages/build_option_page/build_option/technical_skills/technical_skills.dart';
+  static const String pDFPdfPage = 'lib/pages/build_option_page/PDF/pdf_page.dart';
+  static const String personalDetailsPersonalDetails = 'lib/pages/build_option_page/build_option/personal_details/personal_details.dart';
+  static const String personalInfoPagePersonalInfoPage = 'lib/pages/build_option_page/build_option/personal_info_page/personal_info_page.dart';
+  static const String projectsProjects = 'lib/pages/build_option_page/build_option/projects/projects.dart';
+  static const String splashScreensSplashScreens = 'lib/pages/splash_screens/splash_screens.dart';
+  static const String technicalSkillsTechnicalSkills = 'lib/pages/build_option_page/build_option/technical_skills/technical_skills.dart';
   static const String utilsGlobal = 'lib/utils/Global.dart';
   static const String utilsRoutesUtils = 'lib/utils/routes_utils.dart';
   static const String widgetsMySnackbar = 'lib/widgets/my_snackbar.dart';
+
 }

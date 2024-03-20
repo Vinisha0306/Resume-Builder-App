@@ -7,6 +7,12 @@ class Hobbies extends StatefulWidget {
   State<Hobbies> createState() => _HobbiesState();
 }
 
+List Hobbieslist = ['', ''];
+List<TextEditingController> Hobbie = [
+  TextEditingController(),
+  TextEditingController()
+];
+
 class _HobbiesState extends State<Hobbies> {
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,61 @@ class _HobbiesState extends State<Hobbies> {
         backgroundColor: Colors.indigo,
       ),
       backgroundColor: Color.fromARGB(255, 100, 149, 237),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              const Text(
+                'Enter Your Interests',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              ...List.generate(
+                Hobbieslist.length,
+                (index) => Row(
+                  children: [
+                    const Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Travelling,Fishing,Painting',
+                        ),
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Hobbieslist.removeAt(index);
+                        setState(() {});
+                      },
+                      icon: Icon(Icons.delete),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Hobbieslist.add('');
+                  setState(() {});
+                },
+                child: const Text(
+                  'Add',
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

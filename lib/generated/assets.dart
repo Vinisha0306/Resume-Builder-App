@@ -24,7 +24,7 @@ class Assets {
   static const String imagesTrophy = 'lib/assets/images/trophy.png';
   static const String imagesUser (2) = 'lib/assets/images/user (2).png';
   static const String libMain = 'lib/main.dart';
-  static const String pDFPdfPage = 'lib/pages/build_option_page/PDF/pdf_page.dart';
+  static const String pDFPagePdfPage = 'lib/pages/build_option_page/PDF_page/pdf_page.dart';
   static const String personalDetailsPersonalDetails = 'lib/pages/build_option_page/build_option/personal_details/personal_details.dart';
   static const String personalInfoPagePersonalInfoPage = 'lib/pages/build_option_page/build_option/personal_info_page/personal_info_page.dart';
   static const String projectsProjects = 'lib/pages/build_option_page/build_option/projects/projects.dart';
@@ -33,5 +33,6 @@ class Assets {
   static const String utilsGlobal = 'lib/utils/Global.dart';
   static const String utilsRoutesUtils = 'lib/utils/routes_utils.dart';
   static const String widgetsMySnackbar = 'lib/widgets/my_snackbar.dart';
+  static const String widgetsTextfiled = 'lib/widgets/Textfiled.dart';
 
 }

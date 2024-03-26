@@ -75,7 +75,12 @@ class _ExperienceState extends State<Experience> {
                 children: [
                   Expanded(
                     child: RadioListTile(
-                      title: const Text('Previously Employed'),
+                      title: const Text(
+                        'Previously Employed',
+                        style: TextStyle(
+                          fontSize: 13,
+                        ),
+                      ),
                       value: 'Previously',
                       groupValue: employed,
                       onChanged: (value) {

@@ -8,6 +8,10 @@ class TechnicalSkills extends StatefulWidget {
 }
 
 List Technical = ['', ''];
+List<TextEditingController> TechnicalSkill = [
+  TextEditingController(),
+  TextEditingController(),
+];
 
 class _TechnicalSkillsState extends State<TechnicalSkills> {
   @override
@@ -55,9 +59,10 @@ class _TechnicalSkillsState extends State<TechnicalSkills> {
                 Technical.length,
                 (index) => Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
+                        controller: TechnicalSkill[index],
+                        decoration: const InputDecoration(
                           hintText: 'Coding',
                         ),
                       ),
@@ -65,6 +70,7 @@ class _TechnicalSkillsState extends State<TechnicalSkills> {
                     IconButton(
                       onPressed: () {
                         Technical.removeAt(index);
+                        TechnicalSkill.removeAt(index);
                         setState(() {});
                       },
                       icon: Icon(Icons.delete),
@@ -78,6 +84,7 @@ class _TechnicalSkillsState extends State<TechnicalSkills> {
               ElevatedButton(
                 onPressed: () {
                   Technical.add('');
+                  TechnicalSkill.add(TextEditingController());
                   setState(() {});
                 },
                 child: const Text(

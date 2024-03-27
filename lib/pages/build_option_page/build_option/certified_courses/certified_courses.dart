@@ -10,7 +10,7 @@ class CertifiedCourses extends StatefulWidget {
 List courseslist = ['', ''];
 List<TextEditingController> courses = [
   TextEditingController(),
-  TextEditingController()
+  TextEditingController(),
 ];
 
 class _CertifiedCoursesState extends State<CertifiedCourses> {
@@ -36,7 +36,7 @@ class _CertifiedCoursesState extends State<CertifiedCourses> {
         ),
         backgroundColor: Colors.indigo,
       ),
-      backgroundColor: Color.fromARGB(255, 100, 149, 237),
+      backgroundColor: const Color.fromARGB(255, 100, 149, 237),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Container(
@@ -59,9 +59,10 @@ class _CertifiedCoursesState extends State<CertifiedCourses> {
                 courseslist.length,
                 (index) => Row(
                   children: [
-                    const Expanded(
+                    Expanded(
                       child: TextField(
-                        decoration: InputDecoration(
+                        controller: courses[index],
+                        decoration: const InputDecoration(
                           hintText: 'Master In Flutter',
                         ),
                       ),
@@ -69,9 +70,10 @@ class _CertifiedCoursesState extends State<CertifiedCourses> {
                     IconButton(
                       onPressed: () {
                         courseslist.removeAt(index);
+                        courses.removeAt(index);
                         setState(() {});
                       },
-                      icon: Icon(Icons.delete),
+                      icon: const Icon(Icons.delete),
                     ),
                   ],
                 ),
@@ -82,6 +84,7 @@ class _CertifiedCoursesState extends State<CertifiedCourses> {
               ElevatedButton(
                 onPressed: () {
                   courseslist.add('');
+                  courses.add(TextEditingController());
                   setState(() {});
                 },
                 child: const Text(

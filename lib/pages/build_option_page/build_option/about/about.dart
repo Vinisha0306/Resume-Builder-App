@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class About extends StatefulWidget {
@@ -6,6 +7,8 @@ class About extends StatefulWidget {
   @override
   State<About> createState() => _AboutState();
 }
+
+var about = TextEditingController();
 
 class _AboutState extends State<About> {
   @override
@@ -40,9 +43,9 @@ class _AboutState extends State<About> {
             borderRadius: BorderRadius.circular(10),
           ),
           padding: const EdgeInsets.all(20),
-          child: const Column(
+          child: Column(
             children: [
-              Text(
+              const Text(
                 'Enter Your Interests',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -50,11 +53,12 @@ class _AboutState extends State<About> {
                 ),
               ),
               TextField(
-                decoration: InputDecoration(
+                controller: about,
+                decoration: const InputDecoration(
                   hintText: 'Description',
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
             ],

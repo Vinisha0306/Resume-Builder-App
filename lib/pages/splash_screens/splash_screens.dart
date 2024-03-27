@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer.periodic(
-      const Duration(seconds: 20),
+      const Duration(seconds: 2),
       (tick) {
         Navigator.pushReplacementNamed(context, MyRoutes.HomePage);
         tick.cancel();
